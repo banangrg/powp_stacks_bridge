@@ -18,11 +18,11 @@ public class Stack {
 	}
 
 	public boolean isEmpty() {
-		return lastElementIndex == EMPTY_STACK_INDICATOR;
+		return getLastElementIndex() == EMPTY_STACK_INDICATOR;
 	}
 
 	public boolean isFull() {
-		return lastElementIndex == FULL_STACK_INDICATOR;
+		return getLastElementIndex() == FULL_STACK_INDICATOR;
 	}
 
 	public int getTop() {
