@@ -9,26 +9,43 @@ class StacksDemo {
 	public static void main(String[] args) {
 		DefaultStacksFactory factory = new DefaultStacksFactory();
 
+		testStacks(factory);
+
+	}
+
+	private static void testStacks(DefaultStacksFactory factory) {
 		Stack[] stacks = { factory.getStandardStack(), factory.getFalseStack(), factory.getFIFOStack(),
 				factory.getHanoiStack() };
 
-		for (int i = 1; i < 15; i++) {
-			for (int j = 0; j < 3; j++)
-				stacks[j].push(i);
-		}
+		fillStacks(stacks);
 
-		java.util.Random rn = new java.util.Random();
-		for (int i = 1; i < 15; i++)
-			stacks[3].push(rn.nextInt(20));
+		fillHanoiStack(stacks[3]);
 
+		printStacksContent(stacks);
+
+		System.out.println("total rejected is " + ((StackHanoi) stacks[3]).reportRejected());
+	}
+
+	private static void printStacksContent(Stack[] stacks) {
 		for (int i = 0; i < stacks.length; i++) {
 			while (!stacks[i].isEmpty())
 				System.out.print(stacks[i].pop() + "  ");
 			System.out.println();
 		}
+	}
 
-		System.out.println("total rejected is " + ((StackHanoi) stacks[3]).reportRejected());
+	private static void fillHanoiStack(Stack stack) {
+		java.util.Random rn = new java.util.Random();
+		
+		for (int i = 1; i < 15; i++)
+			stack.push(rn.nextInt(20));
+	}
 
+	private static void fillStacks(Stack[] stacks) {
+		for (int i = 1; i < 15; i++) {
+			for (int j = 0; j < 3; j++)
+				stacks[j].push(i);
+		}
 	}
 
 }

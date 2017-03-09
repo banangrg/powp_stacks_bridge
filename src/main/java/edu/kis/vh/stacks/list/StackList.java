@@ -5,6 +5,7 @@ public class StackList {
 	private static final int EMPTY_STACK_INDICATOR = -1;
 	
 	Node last;
+	int i;
 
 	public void pushElement(int item) {
 		if (last == null)
