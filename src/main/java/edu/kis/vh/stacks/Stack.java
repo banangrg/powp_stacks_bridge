@@ -41,8 +41,4 @@ public class Stack {
 		return stackItems;
 	}
 
-	private void setStackItems(int[] stackItems) {
-		this.stackItems = stackItems;
-	}
-
 }
