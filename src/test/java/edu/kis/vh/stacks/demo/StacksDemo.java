@@ -37,3 +37,5 @@ class StacksDemo {
 // stack: wszystkie metody poczawszy od push, nieprawidlowe wciecia
 // StackFIFO: brak wciec do linijek dotyczacych petli while
 // StackHanoi: brak wciec w metodach reportRejected i push
+
+//3.1.3 alt + <- / -> pozwala przemieszczac sie pomiedzy otwartymi plikami projektu
