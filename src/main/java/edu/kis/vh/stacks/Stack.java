@@ -8,6 +8,10 @@ public class Stack {
 	private int[] stakcItems = new int[12];
 	private int lastElementIndex = EMPTY_STACK_INDICATOR;
 
+	public int getLastElementIndex() {
+		return lastElementIndex;
+	}
+
 	public void push(int itemToPush) {
 		if (!isFull())
 			stakcItems[++lastElementIndex] = itemToPush;
