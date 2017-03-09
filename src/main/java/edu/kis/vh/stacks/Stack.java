@@ -6,8 +6,7 @@ public class Stack {
 	private static final int FULL_STACK_INDICATOR = 11;
 
 	private int[] stakcItems = new int[12];
-
-	public int lastElementIndex = EMPTY_STACK_INDICATOR;
+	private int lastElementIndex = EMPTY_STACK_INDICATOR;
 
 	public void push(int itemToPush) {
 		if (!isFull())
