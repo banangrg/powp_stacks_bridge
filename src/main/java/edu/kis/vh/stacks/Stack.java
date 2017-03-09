@@ -4,8 +4,9 @@ public class Stack {
 	
 	private static final int EMPTY_STACK_INDICATOR = -1;
 	private static final int FULL_STACK_INDICATOR = 11;
-
-	private int[] stackItems = new int[12];
+	
+//zaenkapsulowanie z opcja keep reference sprawia ze powstaja settery i gettery,z wewnatrz odwolania do pola zostaja
+	private int[] stackItems = new int[12];//ale na zewnatrz komunikacja odbywa sie przez settery i gettery
 	private int lastElementIndex = EMPTY_STACK_INDICATOR;
 
 	public int getLastElementIndex() {
@@ -14,7 +15,7 @@ public class Stack {
 
 	public void push(int itemToPush) {
 		if (!isFull())
-			getStackItems()[++lastElementIndex] = itemToPush; //uzycie getterow zamiast bezposredniego odwolania do pola
+			stackItems[++lastElementIndex] = itemToPush; 
 	}
 
 	public boolean isEmpty() {
@@ -28,17 +29,13 @@ public class Stack {
 	public int getTop() {
 		if (isEmpty())
 			return EMPTY_STACK_INDICATOR;
-		return getStackItems()[lastElementIndex];
+		return stackItems[lastElementIndex];
 	}
 
 	public int pop() {
 		if (isEmpty())
 			return EMPTY_STACK_INDICATOR;
-		return getStackItems()[lastElementIndex--];
-	}
-
-	private int[] getStackItems() {
-		return stackItems;
+		return stackItems[lastElementIndex--];
 	}
 
 }
