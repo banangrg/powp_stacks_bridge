@@ -2,8 +2,11 @@ package edu.kis.vh.stacks;
 
 public class StackFIFO extends Stack {
 
+	
 	private Stack innerStack = new Stack();
 	
+	//TODO: Exception handling
+	//TODO: maybe a Deque will be faster and simpler
 	@Override
 	public int pop() {
 		while (!isEmpty()) {

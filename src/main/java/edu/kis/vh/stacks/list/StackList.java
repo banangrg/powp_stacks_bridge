@@ -5,6 +5,8 @@ public class StackList {
 	private static final int EMPTY_STACK_INDICATOR = -1;
 	
 	Node last;
+	
+	//TODO: usuned "i" variable
 	int i;
 
 	public void pushElement(int item) {
@@ -12,6 +14,7 @@ public class StackList {
 			last = new Node(item);
 		else {
 			last.next = new Node(item);
+			//TODO: line below is  redundant, left and right is exactly the same
 			last.next.prev = last;
 			last = last.next;
 		}

@@ -27,12 +27,14 @@ public class Stack {
 		return getLastElementIndex() == FULL_STACK_INDICATOR;
 	}
 
+	//TODO: Exception handling
 	public int getTop() {
 		if (isEmpty())
 			return EMPTY_STACK_INDICATOR;
 		return stackItems[lastElementIndex];
 	}
 
+	//TODO: Exception handling
 	public int pop() {
 		if (isEmpty())
 			return EMPTY_STACK_INDICATOR;
