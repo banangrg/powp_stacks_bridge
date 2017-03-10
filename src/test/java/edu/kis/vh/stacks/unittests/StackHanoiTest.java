@@ -37,8 +37,8 @@ public class StackHanoiTest {
 		final int EMPTY_STACK_VALUE = -1;
 		
 		int item = 7, item2 = 8, item3 = 2, item4 = 2;
-		hanoiStack.getTotalRejected();
-		Assert.assertEquals(hanoiStack.getTotalRejected(), 2);
+		hanoiStack.reportRejected();
+		Assert.assertEquals(hanoiStack.reportRejected(), 2);
 		
 	}
 		
