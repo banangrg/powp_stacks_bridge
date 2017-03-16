@@ -2,42 +2,37 @@ package edu.kis.vh.stacks;
 
 public class Stack {
 	
-	private static final int EMPTY_STACK_INDICATOR = -1;
-	private static final int STACK_CAPACITY = 12;
+	private IStackBridge StackImpl;
 	
-//zaenkapsulowanie z opcja keep reference sprawia ze powstaja settery i gettery,z wewnatrz odwolania do pola zostaja
-	private int[] stackItems = new int[STACK_CAPACITY];//ale na zewnatrz komunikacja odbywa sie przez settery i gettery
-	private int lastElementIndex = EMPTY_STACK_INDICATOR;
+	public Stack() {
+		StackImpl = new StackArray();
+	}
 
-	private int getLastElementIndex() {
-		return lastElementIndex;
+	public Stack(IStackBridge stackImpl) {
+		super();
+		StackImpl = stackImpl;
 	}
 
 	public void push(int itemToPush) {
-		if (!isFull())
-			stackItems[++lastElementIndex] = itemToPush; 
+		StackImpl.push(itemToPush);
 	}
 
 	public boolean isEmpty() {
-		return getLastElementIndex() == EMPTY_STACK_INDICATOR;
+		return StackImpl.isEmpty();
 	}
 
 	public boolean isFull() {
-		return getLastElementIndex() == STACK_CAPACITY - 1;
+		return StackImpl.isFull();
 	}
 
-	//TODO: Exception handling
 	public int getTop() {
-		if (isEmpty())
-			return EMPTY_STACK_INDICATOR;
-		return stackItems[lastElementIndex];
+		return StackImpl.getTop();
 	}
 
-	//TODO: Exception handling
 	public int pop() {
-		if (isEmpty())
-			return EMPTY_STACK_INDICATOR;
-		return stackItems[lastElementIndex--];
+		return StackImpl.pop();
 	}
+	
+	
 
 }
