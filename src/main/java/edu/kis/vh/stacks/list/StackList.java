@@ -1,15 +1,19 @@
 package edu.kis.vh.stacks.list;
 
-public class StackList {
+import edu.kis.vh.stacks.IStackBridge;
+
+public class StackList implements IStackBridge {
 
 	private static final int EMPTY_STACK_INDICATOR = -1;
 	
 	Node last;
 	
+	
 	//TODO: unused "i" variable
 	int i;
 
-	public void pushElement(int item) {
+	@Override
+	public void push(int item) {
 		if (last == null)
 			last = new Node(item);
 		else {
@@ -20,20 +24,24 @@ public class StackList {
 		}
 	}
 
+	@Override
 	public boolean isEmpty() {
 		return last == null;
 	}
 
+	@Override
 	public boolean isFull() {
 		return false;
 	}
 
-	public int peek() {
+	@Override
+	public int getTop() {
 		if (isEmpty())
 			return EMPTY_STACK_INDICATOR;
 		return last.getNodeValue();
 	}
 
+	@Override
 	public int pop() {
 		if (isEmpty())
 			return EMPTY_STACK_INDICATOR;
@@ -41,5 +49,10 @@ public class StackList {
 		last = last.prev;
 		return returnValue;
 	}
+	
+	/*
+	 * przy zaagregowaniu StackList w Stack, uzylem opcji Change Method Signature
+	 *  aby dopasowac metody do interfejsu klasy Stack
+	 */
 
 }

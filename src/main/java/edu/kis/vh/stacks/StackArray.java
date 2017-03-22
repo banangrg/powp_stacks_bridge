@@ -1,6 +1,6 @@
 package edu.kis.vh.stacks;
 
-public class StackArray {
+public class StackArray implements IStackBridge {
 	
 	private static final int EMPTY_STACK_INDICATOR = -1;
 	private static final int STACK_CAPACITY = 12;
