@@ -12,9 +12,5 @@ class Node {
 	public int getNodeValue() {
 		return nodeValue;
 	}
-
-	public void setNodeValue(int nodeValue) {
-		this.nodeValue = nodeValue;
-	}
 	
 }
