@@ -1,6 +1,18 @@
 package edu.kis.vh.stacks;
 
+import edu.kis.vh.stacks.implementation.IStackBridge;
+
 public class StackHanoi extends Stack {
+
+	public StackHanoi() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public StackHanoi(IStackBridge stackImpl) {
+		super(stackImpl);
+		// TODO Auto-generated constructor stub
+	}
 
 	private int totalRejected = 0;
 	

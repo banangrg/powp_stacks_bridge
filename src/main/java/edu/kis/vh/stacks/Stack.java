@@ -1,9 +1,9 @@
 package edu.kis.vh.stacks;
 
 import edu.kis.vh.stacks.implementation.IStackBridge;
-import edu.kis.vh.stacks.implementation.StackList;
+import edu.kis.vh.stacks.implementation.StackArray;
 
-public class Stack implements IStackBridge {
+public class Stack {
 	
 	IStackBridge stackImpl;
 
@@ -13,45 +13,25 @@ public class Stack implements IStackBridge {
 	}
 	
 	public Stack() {
-		this.stackImpl = new StackList();
+		this.stackImpl = new StackArray();
 	}
 
-	/* (non-Javadoc)
-	 * @see edu.kis.vh.stacks.IStackBridge#push(int)
-	 */
-	@Override
 	public void push(int itemToPush) {
 		stackImpl.push(itemToPush);
 	}
 
-	/* (non-Javadoc)
-	 * @see edu.kis.vh.stacks.IStackBridge#isEmpty()
-	 */
-	@Override
 	public boolean isEmpty() {
 		return stackImpl.isEmpty();
 	}
 
-	/* (non-Javadoc)
-	 * @see edu.kis.vh.stacks.IStackBridge#isFull()
-	 */
-	@Override
 	public boolean isFull() {
 		return stackImpl.isFull();
 	}
 
-	/* (non-Javadoc)
-	 * @see edu.kis.vh.stacks.IStackBridge#getTop()
-	 */
-	@Override
 	public int getTop() {
 		return stackImpl.getTop();
 	}
 
-	/* (non-Javadoc)
-	 * @see edu.kis.vh.stacks.IStackBridge#pop()
-	 */
-	@Override
 	public int pop() {
 		return stackImpl.pop();
 	}
@@ -59,6 +39,9 @@ public class Stack implements IStackBridge {
 	/*
 	 * konsekwencjami "wyciagniecia" interfejsu jest to, ze w Stack mozemy korzystac
 	 * z dowolnego sposobu implementacji stosu, dzieki czemu mozemy oddzielnie sie zajac abstrakcja
+	 * 
+	 * f3 przenosi nas do deklaracji (niekoniecznie do definicji)
+	 * ctrl+t / ctrl + klik , pozwala nam wybrac otworzenie deklaracji lub iplementacji
 	 */
 	
 
