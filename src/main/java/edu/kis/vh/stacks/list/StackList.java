@@ -6,7 +6,7 @@ public class StackList {
 	
 	Node last;
 	
-	//TODO: usuned "i" variable
+	//TODO: unused "i" variable
 	int i;
 
 	public void pushElement(int item) {
