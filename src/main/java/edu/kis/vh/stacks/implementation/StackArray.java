@@ -1,4 +1,6 @@
-package edu.kis.vh.stacks;
+package edu.kis.vh.stacks.implementation;
+
+import edu.kis.vh.stacks.IStackBridge;
 
 public class StackArray implements IStackBridge {
 	
