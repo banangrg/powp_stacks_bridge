@@ -1,5 +1,6 @@
 package edu.kis.vh.stacks;
 
+import edu.kis.vh.stacks.implementation.IStackBridge;
 import edu.kis.vh.stacks.implementation.StackList;
 
 public class Stack implements IStackBridge {

@@ -1,11 +1,7 @@
 package edu.kis.vh.stacks.implementation;
 
-import edu.kis.vh.stacks.IStackBridge;
-
 public class StackList implements IStackBridge {
 
-	private static final int EMPTY_STACK_INDICATOR = -1;
-	
 	Node last;
 	
 	
@@ -37,14 +33,14 @@ public class StackList implements IStackBridge {
 	@Override
 	public int getTop() {
 		if (isEmpty())
-			return EMPTY_STACK_INDICATOR;
+			return IStackBridge.EMPTY_STACK_INDICATOR;
 		return last.getNodeValue();
 	}
 
 	@Override
 	public int pop() {
 		if (isEmpty())
-			return EMPTY_STACK_INDICATOR;
+			return IStackBridge.EMPTY_STACK_INDICATOR;
 		int returnValue = last.getNodeValue();
 		last = last.prev;
 		return returnValue;
