@@ -6,7 +6,7 @@ public class StackArray implements IStackBridge {
 	
 //zaenkapsulowanie z opcja keep reference sprawia ze powstaja settery i gettery,z wewnatrz odwolania do pola zostaja
 	private int[] stackItems = new int[STACK_CAPACITY];//ale na zewnatrz komunikacja odbywa sie przez settery i gettery
-	private int lastElementIndex = IStackBridge.EMPTY_STACK_INDICATOR -1;
+	private int lastElementIndex = IStackBridge.EMPTY_STACK_INDICATOR - 1;
 
 	private int getLastElementIndex() {
 		return lastElementIndex;
@@ -18,7 +18,7 @@ public class StackArray implements IStackBridge {
 	}
 
 	public boolean isEmpty() {
-		return getLastElementIndex() == IStackBridge.EMPTY_STACK_INDICATOR;
+		return getLastElementIndex() + 1 == IStackBridge.EMPTY_STACK_INDICATOR;
 	}
 
 	public boolean isFull() {

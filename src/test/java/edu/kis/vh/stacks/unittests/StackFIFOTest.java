@@ -11,7 +11,7 @@ public class StackFIFOTest {
 	@Test public void testPop(){
 		DefaultStacksFactory factory = new DefaultStacksFactory();
 		StackFIFO fifoStack = factory.getFIFOStack();
-		final int EMPTY_STACK_VALUE = -1;
+		final int EMPTY_STACK_VALUE = 0;
 		
 		int result = fifoStack.pop();
 		Assert.assertEquals(EMPTY_STACK_VALUE, result);

@@ -33,7 +33,7 @@ public class StackHanoi extends Stack {
 
 	@Override
 	public void push(int itemToPush) {
-		if (!isEmpty() && itemToPush > getTop()) {
+		if (!isEmpty() && itemToPush >= getTop()) {
 			totalRejected++;
 		} else {
 			super.push(itemToPush);

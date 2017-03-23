@@ -15,7 +15,7 @@ public class StackHanoiTest {
 
 		DefaultStacksFactory factory = new DefaultStacksFactory();
 		StackHanoi hanoiStack = factory.getHanoiStack();
-		final int EMPTY_STACK_VALUE = -1;
+		final int EMPTY_STACK_VALUE = 0;
 		
 		int item = 7, item2 = 8, item3 = 2;
 		
@@ -34,9 +34,14 @@ public class StackHanoiTest {
 	@Test public void testTotalRejected() {
 		DefaultStacksFactory factory = new DefaultStacksFactory();
 		StackHanoi hanoiStack = factory.getHanoiStack();
-		final int EMPTY_STACK_VALUE = -1;
+		final int EMPTY_STACK_VALUE = 0;
 		
 		int item = 7, item2 = 8, item3 = 2, item4 = 2;
+		hanoiStack.push(item);
+		hanoiStack.push(item2);
+		hanoiStack.push(item3);
+		hanoiStack.push(item4);
+		
 		hanoiStack.reportRejected();
 		Assert.assertEquals(hanoiStack.reportRejected(), 2);
 		
